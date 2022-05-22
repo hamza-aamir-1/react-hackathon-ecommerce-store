@@ -8,39 +8,47 @@ background: linear-gradient(45deg, rgba(3,0,54,1) 0%, rgba(0,0,111,1) 50%, rgba(
     font-family: Arial, Helvetica, sans-serif;
     font-weight: 600;
     align-items: center;
-    color: white;
+    color: white !important;
+}
+.navbarToggler{
+    background-color: white;
+    box-shadow: none !important;
 }
 .navbar_brand:hover{
     color: white;
 }
-.nav_link{
+.navItem,
+#basic-nav-dropdown{
     color: white;
     font-size: 16px;
     font-weight: 500;
     letter-spacing: 1.1px;
     transition-duration: 0.3s;
     padding: 7px 15px !important;
+    height: 100% !important;
+    text-decoration: none;
+    border-radius: 5px;
 }
-.nav_link:focus{
+.navItem:focus,
+#basic-nav-dropdown:focus{
     color: white;
 }
-.nav_link:hover{
+.navItem:hover,
+#basic-nav-dropdown:hover{
     color: black;
     background-color: white;
 }
-.navbar_icons{
-    color: white;
-    font-size: 25px;
+.navbarDropdownLink{
+    display: flex !important;
+    flex-direction: row !important;
+    padding: 5px 10px;
+    text-decoration: none;
+    color: black;
+    font-size: 16px;
+    font-weight: 500;
 }
-.navbar_account_icons{
-    font-size: 30px;
+.navbarDropdownLink:hover{
     color: white;
-}
-.navbar_icons:hover,
-.navbar_account_icons:hover{
-    color: white;
-}
-.navbar_badge{
-    font-size: 12px;
-    top: 5px !important;
+    background: rgb(3,0,54);
+    background: linear-gradient(45deg, rgba(3,0,54,1) 0%, rgba(0,0,111,1) 50%, rgba(3,0,54,1) 100%);
 }
