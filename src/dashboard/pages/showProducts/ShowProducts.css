@@ -1,0 +1,8 @@
+.table_row > td{
+    padding: 5px 10px;
+    font-weight: 500;
+}
+.table_heading > td{
+    font-size: 18px;
+    font-weight: 500;
+}

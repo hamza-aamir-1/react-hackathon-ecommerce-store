@@ -41,6 +41,11 @@ const Dashboard = () => {
                 <button>Add Product</button>
             </Link>
         </div>
+        <div>
+            <Link to="/showproduct">
+                <button>Show Product</button>
+            </Link>
+        </div>
     </div>
   )
 }
