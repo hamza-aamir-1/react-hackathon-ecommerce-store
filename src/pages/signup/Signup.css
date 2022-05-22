@@ -25,3 +25,8 @@
     letter-spacing: 1.1px;
     font-weight: 500;
 }
+@media screen and (max-width: 1000px) {
+    .signup_box{
+        width: 80%;
+    }
+}

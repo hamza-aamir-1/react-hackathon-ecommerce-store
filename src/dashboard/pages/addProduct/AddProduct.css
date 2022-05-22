@@ -1,32 +1,25 @@
-.login_box{
+.addProductForm{
     width: 50%;
     background: rgb(3,0,54);
     background: linear-gradient(45deg, rgba(3,0,54,1) 0%, rgba(0,0,111,1) 50%, rgba(3,0,54,1) 100%);
     border-radius: 10px;
 }
-.login_form_heading{
-    font-size: 2rem;
+.labelAddProduct{
+    font-size: 16px;
     font-weight: 500;
     color: white;
 }
-.login_back_icon > i{
-    font-size: 40px !important;
-    color: white;
+#description{
+    resize: none;
 }
-.login_btn{
+.addProductBtn{
     background-color: white;
     color: black;
-    padding: 7px 20px;
-    font-size: 18px;
-    font-weight: 500;
-}
-.login_input{
-    font-size: 16px;
-    letter-spacing: 1.1px;
+    padding: 8px 15px;
     font-weight: 500;
 }
 @media screen and (max-width: 1000px) {
-    .login_box{
+    .addProductForm{
         width: 80%;
     }
 }

@@ -1,13 +1,13 @@
 import React from "react";
-import "./Login.css";
+import "./AdminLogin.css";
 import { Link } from "react-router-dom";
 import { signInWithEmailAndPassword } from "firebase/auth";
-import { auth } from "../../config/firebase";
+import { auth } from "../../../config/firebase";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { toast } from 'react-toastify';
 
-const Login = () => {
+const AdminLogin = () => {
 
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
@@ -16,11 +16,11 @@ const Login = () => {
   const handleLogin = (event) => {
     event.preventDefault();
 
-    if(email && password){
+    if(email === 'admin@gmail.com' && password === 'admin123'){
     signInWithEmailAndPassword(auth, email, password)
     .then((userCredential) => {
       const user = userCredential.user;
-      navigate('/')
+      navigate('/dashboard')
     })
     .catch((error) => {
       const errorCode = error.code;
@@ -60,8 +60,19 @@ const Login = () => {
       progress: undefined,
       });
   }
-  else{
+  else if(!email && !password){
     toast.error('Enter Email & Password', {
+      position: "top-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      });
+  }
+  else{
+    toast.error('Email & Password in not correct', {
       position: "top-right",
       autoClose: 5000,
       hideProgressBar: false,
@@ -75,7 +86,7 @@ const Login = () => {
 
   return (
     <div className="my-5 container login_box position-relative">
-      <div className="login_form_heading py-5 text-center">Login</div>
+      <div className="login_form_heading py-5 text-center">Admin Login</div>
       <Link to='/' className="top-0 position-absolute login_back_icon m-5">
         <i className="bi bi-arrow-left-short"></i>
       </Link>
@@ -117,13 +128,9 @@ const Login = () => {
             Login
           </button>
         </div>
-        <div className="text-center mt-4">
-          No account? 
-          <Link to="/Signup" className="ms-2 text-white">Signup</Link>
-        </div>
       </form>
     </div>
   );
 };
 
-export default Login;
+export default AdminLogin;
