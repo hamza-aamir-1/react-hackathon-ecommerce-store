@@ -38,9 +38,27 @@ const Navbar = () => {
         </ul>
       </div>
     </div>
-    <div className=''>
+    <div className='d-flex align-items-center'>
         <div>
-            <a className='navbar_icons' href="">
+            <a className='navbar_icons me-4 position-relative' href="">
+                <i class="bi bi-heart"></i>
+                <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger navbar_badge">
+                    2
+                    <span class="visually-hidden">unread messages</span>
+                </span>
+            </a>
+        </div>
+        <div>
+            <a className='navbar_icons me-4 position-relative' href="">
+                <i class="bi bi-cart2"></i>
+                <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger navbar_badge">
+                    2
+                    <span class="visually-hidden">unread messages</span>
+                </span>
+            </a>
+        </div>
+        <div>
+            <a className='navbar_account_icons' href="">
                 <i class="bi bi-person-circle"></i>
             </a>
         </div>

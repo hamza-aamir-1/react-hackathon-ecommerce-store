@@ -30,8 +30,17 @@ background: linear-gradient(45deg, rgba(3,0,54,1) 0%, rgba(0,0,111,1) 50%, rgba(
 }
 .navbar_icons{
     color: white;
-    font-size: 35px;
+    font-size: 25px;
 }
-.navbar_icons:hover{
+.navbar_account_icons{
+    font-size: 30px;
     color: white;
+}
+.navbar_icons:hover,
+.navbar_account_icons:hover{
+    color: white;
+}
+.navbar_badge{
+    font-size: 12px;
+    top: 5px !important;
 }
