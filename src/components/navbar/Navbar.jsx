@@ -1,9 +1,34 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./Navbar.css";
 import { Link } from "react-router-dom";
 import { Container, Navbar, Nav, NavDropdown } from "react-bootstrap";
+import LoggedInContext from "../../context/LoggedinContext/LoggedinContext";
+import { useEffect, useState } from "react";
+import { signOut } from "firebase/auth";
+import { auth } from "../../config/firebase";
 
 const NavbarHeader = () => {
+
+  const a = useContext(LoggedInContext);
+  const [isLoggedIn, setIsLoggedIn] = useState();
+  useEffect(() => {
+    console.log(a.userStatus.uid)
+    if(a.userStatus.uid){
+      setIsLoggedIn(true);
+    }
+    else{
+      setIsLoggedIn(false);
+    }
+  }, [])
+
+  const handleLogout = () => {
+    signOut(auth).then(() => {
+      setIsLoggedIn(false);
+    }).catch((error) => {
+      console.log(error)
+    });
+  }
+
   return (
     <Navbar expand="lg" className="px-4 py-1">
       <Container>
@@ -33,7 +58,8 @@ const NavbarHeader = () => {
               </Link>
             </NavDropdown>
 
-            <NavDropdown title="Account" id="basic-nav-dropdown">
+            {!isLoggedIn && (
+              <NavDropdown title="Account" id="basic-nav-dropdown">
               <Link to="/Login" className="navbarDropdownLink">
                 Login
               </Link>
@@ -41,6 +67,13 @@ const NavbarHeader = () => {
                 Signup
               </Link>
             </NavDropdown>
+            )}
+
+            {isLoggedIn && (
+                <button className="navbarDropdownLink" onClick={handleLogout}>
+                  Logout
+                </button>
+            )}
 
           </Nav>
         </Navbar.Collapse>
